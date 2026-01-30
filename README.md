@@ -3,21 +3,21 @@
 A full-stack **Academic Management System** developed collaboratively by multiple teams using  
 **Spring Boot, MySQL, and HTML/CSS/JavaScript**.
 
-The project is modular, where each team handles a specific responsibility, and all modules integrate into a single system.
+The project follows a **modular, team-based architecture**, where each team owns a specific domain while integrating seamlessly into a single application.
 
 ---
 
 ## 🚀 Project Overview
 
-This system is designed to manage academic operations such as:
+This system is designed to digitize and simplify academic operations such as:
 
-- Course and intake management  
-- Staff and student handling  
-- Attendance and exams  
-- Secure authentication and authorization  
-- Centralized dashboard and reporting  
+- Course and intake management
+- Staff and student handling
+- Enrollment, attendance, and exams
+- Secure authentication and authorization
+- Centralized dashboard and reporting
 
-Each team worked on a dedicated module while ensuring smooth integration across the application.
+Each module is built independently by different teams and integrated using shared REST APIs and a common database.
 
 ---
 
@@ -25,100 +25,115 @@ Each team worked on a dedicated module while ensuring smooth integration across 
 
 ---
 
-### 🔹 Team A – Core Management, Security & Frontend
+## 🔹 Team A – Core Management, Security & Frontend
 
-**Responsibilities**
-- Security configuration and authentication
+### Responsibilities
+- Application security and authentication
 - Frontend UI design
-- Course & Staff core management
+- Course and staff core management
 - Dashboard and navigation
-- Database design (core tables)
+- Core database design and integration
 
-**Individual Contributions**
+### Individual Contributions
 - **Security & Database Design:**  
-  Hemant, Abhishek, Sanjana
+  *Hemant*, *Abhishek*  
+  (Spring Security configuration, authentication flow, database schema design)
 
 - **Frontend Design (UI/UX):**  
-  Hemant, Rohit Sanjana
+  *Hemant*, *Rohit* 
+  (Login/logout pages, dashboard, navigation bar, forms, styling)
 
 - **Staff Entity Design:**  
-  Abhishek
+  *Abhishek*
 
 - **Course Entity Design:**  
-  Anurag
+  *Anurag*
 
 - **Course & Staff CRUD Operations (Controller, Service, Repository):**  
-  Rohit, Anurag, Hemant, Abhishek
+  *Rohit*, *Anurag*, *Hemant*
 
 - **Backend Development:**  
   Contributed collaboratively by all Team A members
 
 ---
 
-### 🔹 Team B – Student & Location Management
+## 🔹 Team B – Student, Intake & Enrollment Management
 
-**Responsibilities**
+### Responsibilities
 - Student management
-- Location handling
-- Student enrollment into intakes
-- Linking students with courses through intakes
+- Intake creation and seat management
+- Student enrollment into courses
+- Location management
+- Integration support for the Exam module
 
-**Individual Contributions**
-- **Student Entity & Table Design:**  
-  Team B members
+### Individual Contributions
+- **Jatin:**  
+  Implemented the complete **Student Management** module (Add, Edit, View, Delete students).
 
-- **Location Entity & Mapping:**  
-  Team B members
+- **Nithisha:**  
+  Designed and implemented **Intake Management**, including seat allocation logic and **OPEN / CLOSED** status handling.
 
-- **Student Enrollment Logic:**  
-  Team B members
+- **Sunil:**  
+  Developed **Student Enrollment** functionality and implemented **course–intake mapping**.
 
-- **Backend APIs for Students & Locations:**  
-  Team B members
+- **Prajakta:**  
+  Implemented **Location Management** and integrated locations with the enrollment process using proper validations.
 
----
-
-### 🔹 Team D – Attendance, Exams & Results
-
-**Responsibilities**
-- Attendance tracking
-- Exam management
-- Result processing
-
-**Individual Contributions**
-- **Attendance Entity & APIs:**  
-  Team D members
-
-- **Exam & Question Management:**  
-  Team D members
-
-- **Result Calculation & Storage:**  
-  Team D members
-
-- **Backend Integration:**  
-  Team D members
+### Team Collaboration
+- All Team B members collaboratively worked on **frontend development, backend APIs, database integration, and testing**.
 
 ---
 
-### 🔹 Team E – Reports & Analytics
+## 🔹 Team D – Exams & Results Module
 
-**Responsibilities**
-- Report generation
-- Data analysis across modules
-- Read-only access to aggregated data
+### Responsibilities
+- Exam creation and execution
+- Exam submission and evaluation
+- Result processing and display
 
-**Individual Contributions**
-- **SQL-based Reports:**  
-  Team E members
+### Individual Contributions
+- **Anurag:**  
+  Designed and implemented **Create Exam** and **Submit Exam** functionality end-to-end, including backend logic, validations, REST APIs, and integration.
 
-- **Attendance Reports:**  
-  Team E members
+- **Rajeshwari:**  
+  Worked on **entity design** and implemented the **Start Exam** functionality, including integration and debugging.
 
-- **Course & Student Reports:**  
-  Team E members
+- **Varsha:**  
+  Developed the **Result Page** and contributed to frontend development.
 
-- **Result & Performance Analytics:**  
-  Team E members
+- **Riya:**  
+  Handled **frontend development** and data management for the exam module.
+
+---
+
+## 🔹 Team E – Reports & Analytics Module
+
+### Responsibilities
+- Reports module design and architecture
+- Course, staff, student, and examination reports
+- Reports dashboard UI
+- Aggregated data handling using optimized SQL queries
+- Database-level reporting and backend integration
+
+### Individual Contributions
+- **Aishwarya – Staff Reports:**  
+  Implemented staff-to-course and location mapping reports to monitor instructor workload.
+
+- **Ankita – Student & Exam Reports (by Student Name):**  
+  Developed student performance reports with expandable views for detailed scores and student information.
+
+- **Pavan – Exam Reports (by Exam Name):**  
+  Implemented exam-wise reports including pass/fail statistics, average, minimum, maximum marks, student scores, and absentee details.
+
+- **Sridhar – Course Reports:**  
+  Designed course-level dashboards displaying enrolled students, assigned staff, and scheduled exams.
+
+### Architecture & Integration
+- **Reports Module Design & Architecture:**  
+  *Sridhar* and *Aishwarya* defined report data flow, aggregation strategies, and integration points.
+
+- **Module Integration & Data Flow Coordination:**  
+  *Pavan* and *Ankita* ensured smooth integration with shared database entities and consistent data flow across modules.
 
 ---
 
@@ -134,7 +149,7 @@ Each team worked on a dedicated module while ensuring smooth integration across 
 ### Frontend
 - HTML5
 - CSS3
-- JavaScript
+- JavaScript (Fetch API)
 
 ### Database
 - MySQL
@@ -143,22 +158,22 @@ Each team worked on a dedicated module while ensuring smooth integration across 
 
 ## 🔐 Security Features
 
-- Custom login & logout
+- Custom login and logout
 - Form-based authentication
-- HTTP Basic authentication for APIs
+- HTTP Basic authentication for API testing
 - BCrypt password encryption
-- Session-based security
-- Protected REST endpoints
+- Session-based access control
+- Protected REST endpoints under `/api/**`
 
 ---
 
 ## 🔄 Application Flow
 
 1. User accesses the application
-2. User logs in through secure authentication
-3. Dashboard provides access to modules
-4. Each module communicates via REST APIs
-5. Data is stored and retrieved from MySQL
+2. User logs in via secure authentication
+3. Dashboard provides access to all modules
+4. Each module communicates through REST APIs
+5. Data is stored and retrieved from MySQL using JPA/Hibernate
 6. Reports are generated using aggregated data
 7. User logs out securely
 
@@ -166,13 +181,15 @@ Each team worked on a dedicated module while ensuring smooth integration across 
 
 ## 📌 Key Learning Outcomes
 
-- Real-world team-based project collaboration
+- Real-world team-based software development
 - Modular backend architecture
 - Secure authentication and authorization
 - Database design and normalization
 - Frontend–backend integration
+- Report generation using aggregated data
 
 ---
+
 
 Default Admin User:
 ```text
