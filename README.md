@@ -36,10 +36,10 @@ Each team worked on a dedicated module while ensuring smooth integration across 
 
 **Individual Contributions**
 - **Security & Database Design:**  
-  Hemant, Abhishek
+  Hemant, Abhishek, Sanjana
 
 - **Frontend Design (UI/UX):**  
-  Hemant
+  Hemant, Rohit Sanjana
 
 - **Staff Entity Design:**  
   Abhishek
@@ -48,7 +48,7 @@ Each team worked on a dedicated module while ensuring smooth integration across 
   Anurag
 
 - **Course & Staff CRUD Operations (Controller, Service, Repository):**  
-  Rohit, Anurag
+  Rohit, Anurag, Hemant, Abhishek
 
 - **Backend Development:**  
   Contributed collaboratively by all Team A members
