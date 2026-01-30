@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Staff</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+             alt="logo" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-staff.html">Add Staff</a>
+        <a href="view-staff.html">View Staff</a>
+        <button onclick="logout()" style="background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
+<!-- TABLE -->
+<div class="container">
+    <h2>Staff Members</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Max Courses</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="staffTable"></tbody>
+    </table>
+</div>
+
+<!-- MODAL BACKDROP -->
+<div id="modalBackdrop" class="modal-backdrop hidden"></div>
+
+<!-- EDIT MODAL -->
+<div id="editModal" class="modal hidden">
+    <h3 id="modalTitle">Edit Staff</h3>
+
+    <input id="modalName" placeholder="Name">
+    <input id="modalEmail" placeholder="Email">
+    <input id="modalLimit" placeholder="Max Courses">
+
+    <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+        <button class="btn-save" onclick="saveChanges()">Save</button>
+    </div>
+</div>
+
+<!-- LOAD JS LAST -->
+<script src="js/staff.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+</html>

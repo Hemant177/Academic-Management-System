@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mthree Academy - Staff Details</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f5f7fa;
+            font-family: "Times New Roman",'Segoe UI', sans-serif;
+        }
+        .navbar-custom {
+            background-color: #1f3c4d;
+            padding: 12px 40px;
+        }
+        .navbar-custom .navbar-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .navbar-custom .nav-link {
+            color: #f3f3f3;
+            font-weight: 500;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+        .navbar-custom .nav-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+
+        .hero-section {
+            background: linear-gradient(90deg, #1f3c4d, #244b5a);
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+        }
+
+        /* Page heading */
+        h4 {
+            color: #1f3c4d;
+            font-weight: 600;
+        }
+
+        /* Table alignment */
+        table th,
+        table td {
+            text-align: center !important;
+            vertical-align: middle !important;
+        }
+
+        /* FIXED TABLE HEADINGS COLOR */
+        .details-table th {
+            background-color: #1f3c4d !important; /* Brand Color */
+            color: #ffffff !important;           /* White Text */
+            font-weight: 600;
+            width: 30%;
+        }
+
+        /* RIGHT COLUMN (VALUES) */
+        .details-table td {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Course list */
+        .course-list {
+            list-style-position: inside;
+            padding-left: 0;
+            margin: 0;
+            list-style-type: none; /* Added bullet points for clarity */
+        }
+        .course-list li {
+            padding: 2px 0;
+        }
+
+        /* Back button */
+        .back-btn {
+            border: 1.5px solid #1f3c4d;
+            color: #1f3c4d;
+            border-radius: 30px;
+            padding: 8px 22px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .back-btn:hover {
+            background-color: #1f3c4d;
+            color: #ffffff;
+        }
+        /* PAGE SECTION HEADING */
+        .page-heading {
+            background-color: #1f3c4d;
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            margin: 25px 0 20px 0; /* space from navbar & content */
+            font-size: 1.4rem;
+            font-weight: 600;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark navbar-custom">
+    <div class="d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="/dashboard.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" width="35" class="me-2">
+            Mthree Academy
+        </a>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" th:href="@{/courseReport}">Course Reports</a>
+        <a class="nav-link" th:href="@{/staffReport}">Staff Reports</a>
+        <a class="nav-link" th:href="@{/studentReport}">Student Reports</a>
+        <a class="nav-link" th:href="@{/examReportByExam}">Exam Reports</a>
+        <a class="nav-link" th:href="@{/examReportByStudent}">Student Exam Reports</a>
+    </div>
+</nav>
+
+
+
+<div class="container my-4">
+    <h4 class="page-heading">Staff Details</h4>
+
+    <table class="table table-bordered shadow-sm details-table">
+        <tbody th:if="${#lists.size(details) > 0}">
+        <tr>
+            <th>Staff Code</th>
+            <td th:text="${details[0].staffCode}"></td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td th:text="${details[0].staffName}"></td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td th:text="${details[0].email}"></td>
+        </tr>
+
+        <tr>
+            <th>Courses</th>
+            <td>
+                <ul class="course-list">
+                    <li th:each="c : ${details}" th:text="${c.courseName}"></li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Location</th>
+            <td th:text="${details[0].locationName}"></td>
+        </tr>
+        <tr>
+            <th>Total Students</th>
+            <td th:text="${details[0].studentCount}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div class="text-center mt-4">
+        <a th:href="@{/staffReport}" class="back-btn">
+            <i class="bi bi-arrow-left"></i> Back to Staff Reports
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

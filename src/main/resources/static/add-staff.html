@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Staff</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+             alt="logo" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-staff.html">Add Staff</a>
+        <a href="view-staff.html">View Staff</a>
+        <button onclick="logout()" style="background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
+
+<div class="main-content">
+    <div class="form-card">
+        <h2>Add Staff</h2>
+        <input id="code" placeholder="Staff Code">
+        <input id="name" placeholder="Staff Name">
+        <input id="email" placeholder="Email">
+        <input id="limit" type="number" placeholder="Max Courses">
+        <button onclick="addStaff()">Save Staff</button>
+    </div>
+</div>
+
+<footer>© 2026 Academic Management System</footer>
+<script src="js/staff.js"></script>
+<script src="js/logout.js"></script>
+</body>
+</html>

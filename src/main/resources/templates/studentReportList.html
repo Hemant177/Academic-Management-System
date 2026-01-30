@@ -1,0 +1,273 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Student Reports</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+
+    body {
+      background-color: #f4f7f6;
+      font-family: "Times New Roman",'Segoe UI', sans-serif;
+    }
+
+    .blue-color {
+      background-color: #1f3c4d;
+      color: white;
+    }
+
+    .navbar-custom {
+      background-color: #1f3c4d;
+      padding: 12px 40px;
+    }
+
+    .navbar-custom .navbar-brand {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
+    .navbar-custom .nav-link {
+      color: #f3f3f3;
+      font-weight: 500;
+      margin-left: 25px;
+      transition: 0.3s;
+    }
+
+    .navbar-custom .nav-link:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .stats-card {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stats-card h3 {
+      margin: 10px 0 0;
+    }
+
+    .stats-label {
+      font-size: 1.4rem;
+    }
+
+    .btn-custom {
+      background-color: #1f3c4d;
+      color: white;
+    }
+
+    .table-custom {
+      --bs-table-bg: #1f3c4d;
+      --bs-table-color: #ffffff;
+    }
+
+    .form-control {
+      border-radius: 0;
+    }
+
+    .expandable {
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .expandable:hover {
+      background-color: #f8f9fa;
+    }
+
+    .info-label {
+      font-weight: bold;
+      color: #6c757d;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+    }
+
+    .info-value {
+      font-weight: 500;
+      color: #141A46;
+    }
+
+    .badge-status-active {
+      background-color: #d1e7dd;
+      color: #0f5132;
+    }
+
+    .badge-status-suspended {
+      background-color: #f8d7da;
+      color: #842029;
+    }
+
+    .text-color{
+      color:  #244b5a;
+    }
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-custom blue-color sticky-top">
+  <div class="d-flex align-items-center">
+    <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+      <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" width="35" class="me-2">
+      Mthree Academy
+    </a>
+  </div>
+  <div class="d-flex">
+    <a class="nav-link" th:href="@{/courseReport}">Course Reports</a>
+    <a class="nav-link" th:href="@{/staffReport}">Staff Reports</a>
+    <a class="nav-link" th:href="@{/studentReport}">Student Reports</a>
+    <a class="nav-link" th:href="@{/examReportByExam}">Exam Reports</a>
+    <a class="nav-link" th:href="@{/examReportByStudent}">Student Exam Reports</a>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+    <h2 class="m-0 fw-bolder text-color">Student Reports</h2>
+    <a href="/" class="btn btn-sm btn-outline-secondary">Back to Reports</a>
+  </div>
+
+  <!-- Stats Cards -->
+  <div class="row g-3 mb-4">
+    <div class="col-md-4">
+      <div class="stats-card shadow-sm text-white blue-color">
+        <div class="stats-label">Total Students</div>
+        <h3 th:text="${stats.totalStudents}">0</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stats-card shadow-sm text-white blue-color">
+        <div class="stats-label">Active Students</div>
+        <h3 th:text="${stats.activeStudents}">0</h3>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="stats-card shadow-sm text-white blue-color">
+        <div class="stats-label">Suspended Students</div>
+        <h3 th:text="${stats.suspendedStudents}">0</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Filter -->
+  <div class="card mb-4 border-0 shadow-sm">
+    <div class="card-body bg-white">
+      <form action="/studentReport" method="get">
+        <div class="input-group">
+          <span class="input-group-text bg-white fw-bold">Student Code</span>
+          <input
+                  type="text"
+                  name="search"
+                  class="form-control"
+                  placeholder="Search by Name or Student Code"
+                  th:value="${searchQuery}"
+          />
+          <button type="submit" class="btn btn-custom px-4">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Table Columns -->
+  <div class="bg-white shadow-sm overflow-hidden" style="border-radius: 8px;">
+    <table class="table mb-0">
+      <thead class="table-custom">
+      <tr>
+        <th>Code</th>
+        <th>Student Name</th>
+        <th>Enrolled Courses</th>
+        <th>Exams (Pass/Attempted)</th>
+        <th>Avg Score</th>
+        <th>Status</th>
+        <th>Course Location</th>
+      </tr>
+      </thead>
+      <tbody>
+      <th:block th:each="r, iter : ${reports}">
+        <tr class="expandable" th:onclick="'toggle(' + ${iter.index} + ')'">
+          <td class="fw-bold">
+            <span th:text="${r.studentCode}">STU-000</span>
+            <div class="text-muted" style="font-size: 0.65rem">Click for details</div>
+          </td>
+          <td>
+            <div th:text="${r.studentName}" class="fw-bold"></div>
+            <small class="text-muted" th:text="${r.email}"></small>
+          </td>
+          <td>
+            <span th:text="${r.coursesCount}" class="badge bg-light text-dark border">0</span>
+            <div class="text-muted mt-1" style="font-size: 0.75rem"
+                 th:text="${#strings.listJoin(r.courseNames, ', ')}"></div>
+          </td>
+          <td>
+            <span class="fw-bold text-color" th:text="${r.examsPassedCount}"></span> /
+            <span th:text="${r.examsAttendedCount}"></span>
+          </td>
+          <td th:text="${#numbers.formatDecimal(r.avgScore, 1, 1)}">0.0</td>
+          <td>
+            <span class="badge"
+                  th:classappend="${r.status != null && r.status.equalsIgnoreCase('Active') ? 'badge-status-active' : 'badge-status-suspended'}"
+                  th:text="${r.status != null ? r.status : 'Unknown'}">Active</span>
+          </td>
+          <td th:text="${r.preferredLocation}">Location</td>
+        </tr>
+
+        <!-- expand-->
+        <tr th:id="'row-' + ${iter.index}" style="display: none">
+          <td colspan="7" class="p-0 border-0">
+            <div class="px-4 py-3 bg-light border-start border-4 border-primary shadow-inner">
+              <h6 class="mb-3 border-bottom pb-2 fw-bold text-secondary">Personal Information</h6>
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <div class="info-label">Full Name</div>
+                  <div class="info-value" th:text="${r.studentName}">John Doe</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info-label">Student Code</div>
+                  <div class="info-value" th:text="${r.studentCode}">STU-001</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info-label">Email Address</div>
+                  <div class="info-value" th:text="${r.email}">email@example.com</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info-label">Phone Number</div>
+                  <div class="info-value" th:text="${r.phone != null ? r.phone : 'Not provided'}">123-456-7890</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info-label">Gender</div>
+                  <div class="info-value" th:text="${r.gender != null ? r.gender : 'Not set'}">Male</div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info-label">Date of Birth</div>
+                  <div class="info-value" th:text="${r.dob != null ? r.dob : 'Not set'}">1990-01-01</div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </th:block>
+
+      <!-- Empty State -->
+      <tr th:if="${#lists.isEmpty(reports)}">
+        <td colspan="7" class="text-center py-5 text-muted">
+          No student records found matching your search criteria.
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<footer class="text-center py-4 text-muted" style="font-size: 0.85rem">
+  © 2026 Academic Management System - Student Module
+</footer>
+
+<script>
+  function toggle(id) {
+    var element = document.getElementById("row-" + id);
+    element.style.display = element.style.display === "none" ? "table-row" : "none";
+  }
+</script>
+</body>
+</html>

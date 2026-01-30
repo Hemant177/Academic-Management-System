@@ -1,0 +1,281 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Exam Performance Report</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+    <style>
+        body {
+            background-color: #f4f7f6;
+            font-family: "Times New Roman", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+        }
+
+        .blue-color {
+            background-color: #1f3c4d;
+            color: white;
+        }
+
+        .navbar-custom {
+            background-color: #1f3c4d;
+            padding: 12px 40px;
+        }
+
+        .navbar-custom .navbar-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .navbar-custom .nav-link {
+            color: #f3f3f3;
+            font-weight: 500;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .stats-card {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stats-card h3 {
+            margin: 10px 0 0;
+        }
+
+        .stats-label {
+            font-size: 1.4rem;
+        }
+
+        .expandable {
+            cursor: pointer;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pass {
+            color: green;
+            font-weight: bold;
+        }
+
+        .fail {
+            color: red;
+            font-weight: bold;
+        }
+
+
+        .form-control,
+        .form-select {
+            border-radius: 0;
+        }
+
+        .blue-color-text {
+            color: #1f3c4d;
+        }
+
+        .btn-custom {
+            background-color: #1f3c4d;
+            color: white;
+        }
+
+
+        .table-custom {
+            --bs-table-bg: #1f3c4d;
+            --bs-table-color: #ffffff;
+        }
+
+        .text-color{
+            color:  #244b5a;
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-dark navbar-custom blue-color sticky-top">
+    <div class="d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" width="35" class="me-2">
+            Mthree Academy
+        </a>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" th:href="@{/courseReport}">Course Reports</a>
+        <a class="nav-link" th:href="@{/staffReport}">Staff Reports</a>
+        <a class="nav-link" th:href="@{/studentReport}">Student Reports</a>
+        <a class="nav-link" th:href="@{/examReportByExam}">Exam Reports</a>
+        <a class="nav-link" th:href="@{/examReportByStudent}">Student Exam Reports</a>
+    </div>
+</nav>
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2 ">
+        <h2 class="m-0 fw-bolder text-color">Students Exam Reports</h2>
+        <a href="/" class="btn btn-sm btn-outline-secondary">Back to Reports</a>
+    </div>
+
+    <!-- Stats Cards -->
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <div class="stats-card shadow-sm text-white blue-color">
+                <div class="stats-label">Total Exams </div>
+                <h3 th:text="${stats.totalExams}">0</h3>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stats-card shadow-sm text-white blue-color">
+                <div class="stats-label">Pass Percentage</div>
+                <h3 th:text="${#numbers.formatDecimal(stats.passRate, 1, 1)} + '%'">0%</h3>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="stats-card shadow-sm text-white blue-color">
+                <div class="stats-label">Total Students</div>
+                <h3 th:text="${stats.totalStudents}">0</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Form -->
+    <div class="card mb-4 border-0 shadow-sm">
+        <div class="card-body bg-white">
+            <form action="/examReportByStudent" method="get">
+                <div class="input-group mb-3 ">
+                    <span class="input-group-text bg-white fw-bold">Course</span>
+                    <select name="courseId" class="form-select">
+                        <option value="">Select Courses</option>
+                        <option
+                                th:each="c:${courses}"
+                                th:value="${c[0]}"
+                                th:text="${c[1]}"
+                                th:selected="${selectedCourse!= null and selectedCourse == c[0]}">
+                        </option>
+
+                    </select>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text bg-white fw-bold">Student Code</span>
+                    <input
+                            type="text"
+                            name="studentCode"
+                            class="form-control"
+                            placeholder="Enter Student Code "
+                            th:value="${selectedStudent}"
+                    />
+                    <button type="submit" class="btn btn-custom px-4">Show Results</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="bg-white shadow-sm overflow-hidden" style="border-radius: 8px;">
+        <table class="table mb-0">
+            <thead class="table-custom">
+            <tr>
+                <th>Student Code</th>
+                <th>Student Name</th>
+                <th>Exams Attended</th>
+                <th>Exams Absent</th>
+                <th>Average Score</th>
+                <th>Highest Score</th>
+                <th>Lowest Score</th>
+            </tr>
+            </thead>
+            <tbody>
+            <th:block th:each="r, iter : ${reports}">
+                <tr class="expandable" th:onclick="'toggle(' + ${iter.index} + ')'">
+                    <td>
+                        <div th:text="${r.studentCode}" class="fw-bold"></div>
+                        <small class="text-muted" style="font-size: 0.65rem">Click to see details</small>
+                    </td>
+                    <td th:text="${r.studentName}"></td>
+                    <td>
+                        <span class="badge bg-light text-dark border" th:text="${r.totalExamsAttended}">0</span>
+                    </td>
+                    <td>
+                        <span class="badge bg-light text-dark border" th:text="${r.absentExamsCount}">0</span>
+                    </td>
+                    <td th:text="${#numbers.formatDecimal(r.avgScore, 1, 1)}">0.0</td>
+                    <td>
+                        <span class="text-success fw-bold" th:text="${#numbers.formatDecimal(r.maxScore, 1, 1)}">0</span>
+                        <br/>
+                        <small class="text-muted italic" style="font-size: 0.7rem" th:text="${r.maxScoreTestName}"></small>
+                    </td>
+                    <td>
+                        <span class="text-danger fw-bold" th:text="${#numbers.formatDecimal(r.minScore, 1, 1)}">0</span>
+                        <br/>
+                        <small class="text-muted italic" style="font-size: 0.7rem" th:text="${r.minScoreTestName}"></small>
+                    </td>
+                </tr>
+                <!-- Hidden Detail Row -->
+                <tr th:id="'row-' + ${iter.index}" style="display: none">
+                    <td colspan="7" class="p-3 bg-light">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <h6 class="border-bottom pb-1 fw-bold text-secondary">Exams Attended</h6>
+                                <table class="table table-sm bg-white table-bordered">
+                                    <thead class="small table-secondary">
+                                    <tr>
+                                        <th>Exam Name</th>
+                                        <th>Score</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody class="small">
+                                    <tr th:each="ex : ${r.attendedExams}">
+                                        <td th:text="${ex.examName}"></td>
+                                        <td>
+                                            <span th:text="${ex.score}"></span> /
+                                            <span th:text="${ex.outOf}"></span>
+                                        </td>
+                                        <td
+                                                th:class="${ex.passed ? 'pass' : 'fail'}"
+                                                th:text="${ex.passed ? 'PASS' : 'FAIL'}"
+                                        ></td>
+                                        <td th:text="${ex.date}"></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-5 border-start">
+                                <h6 class="border-bottom pb-1 fw-bold text-secondary">Absences</h6>
+                                <ul class="list-unstyled small px-2">
+                                    <li th:each="ab : ${r.absentExams}" class="mb-1 text-danger">
+                                        &bull; <span th:text="${ab.examName}"></span>
+                                        <!--                                        <span class="text-muted" th:text="'(' + ${ab.date} + ')'"></span>-->
+                                    </li>
+                                    <li th:if="${#lists.isEmpty(r.absentExams)}" class="text-muted italic">
+                                        No absences recorded.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </th:block>
+            <!-- Empty State -->
+            <tr th:if="${#lists.isEmpty(reports)}">
+                <td colspan="7" class="text-center py-5 text-muted">
+                    No student records found matching your filters.
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<footer class="text-center py-4 text-muted" style="font-size: 0.85rem">
+    © 2026 Academic Management System - Exam Module
+</footer>
+
+<script>
+    function toggle(id) {
+        var element = document.getElementById("row-" + id);
+        element.style.display = element.style.display === "none" ? "table-row" : "none";
+    }
+</script>
+</body>
+</html>

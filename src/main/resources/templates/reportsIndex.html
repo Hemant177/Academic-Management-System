@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Mthree Academy - Reports</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <style>
+        body{
+            font-family: "Times New Roman",'Segoe UI', sans-serif;
+        }
+        .navbar-custom
+        {
+            background-color: #1f3c4d;
+            padding: 12px 40px;
+
+        }
+        .navbar-custom .navbar-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .navbar-custom .nav-link {
+            color: #f3f3f3;
+            font-weight: 500;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+        .navbar-custom .nav-link:hover {
+            color: white ;
+            transform: translateY(-2px);
+        }
+
+        .hero-section
+        {
+            background: linear-gradient(to right,#1f3c4d,#244b5a);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .card-custom {
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .card-custom:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .icon {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<!--&lt;!&ndash;nav bar&ndash;&gt;-->
+<!--<nav class="navbar navbar-dark navbar-custom sticky-top">-->
+<!--    <div class="d-flex align-items-center">-->
+<!--        <a class="navbar-brand d-flex align-items-center" href="dashboard.html">-->
+<!--            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" width="35" class="me-2">-->
+<!--            Mthree Academy-->
+<!--        </a>-->
+<!--    </div>-->
+<!--    <div class="d-flex">-->
+<!--        <div class="nav-item dropdown">-->
+<!--            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">-->
+<!--                Reports-->
+<!--            </a>-->
+<!--            <ul class="dropdown-menu dropdown-menu-end">-->
+<!--                <li><a class="dropdown-item" th:href="@{/reports}">Home</a></li>-->
+<!--                <li><a class="dropdown-item" th:href="@{/courseReport}">Course Reports</a></li>-->
+<!--                <li><a class="dropdown-item" th:href="@{/staffReport}">Staff Reports</a></li>-->
+<!--                <li><a class="dropdown-item" th:href="@{/studentReport}">Student Reports</a></li>-->
+<!--                <li><a class="dropdown-item" th:href="@{/examReportByExam}">Exam Reports (By Exam)</a></li>-->
+<!--                <li><a class="dropdown-item" th:href="@{/examReportByStudent}">Exam Reports (By Student)</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</nav>-->
+
+<nav class="navbar navbar-dark navbar-custom blue-color sticky-top">
+    <div class="d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" width="35" class="me-2">
+            Mthree Academy
+        </a>
+    </div>
+    <div class="d-flex">
+        <a class="nav-link" th:href="@{/courseReport}">Course Reports</a>
+        <a class="nav-link" th:href="@{/staffReport}">Staff Reports</a>
+        <a class="nav-link" th:href="@{/studentReport}">Student Reports</a>
+        <a class="nav-link" th:href="@{/examReportByExam}">Exam Reports</a>
+        <a class="nav-link" th:href="@{/examReportByStudent}">Student Exam Reports</a>
+    </div>
+</nav>
+
+<!--hero section-->
+<div class="hero-section">
+    <h1>Reports Section</h1>
+    <p>Academic insights, performance metrics, and analytics at one place</p>
+</div>
+
+<!--cards section-->
+<div class="container mt-3">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card card-custom text-center p-4" th:onclick="|window.location='@{/courseReport}'|">
+                <div class="icon"><i class="bi bi-journal-bookmark-fill"></i></div>
+                <h5>Course Reports</h5>
+                <p class="text-muted">Enrollment and performance overview</p>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-custom text-center p-4" th:onclick="|window.location='@{/staffReport}'|">
+                <div class="icon"><i class="bi bi-person-workspace"></i></div>
+                <h5>Staff Reports</h5>
+                <p class="text-muted">Enrollment and performance overview</p>
+
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card card-custom text-center p-4" th:onclick="|window.location='@{/studentReport}'|">
+                <div class="icon"><i class="bi bi-mortarboard-fill"></i></div>
+                <h5>Student Reports</h5>
+                <p class="text-muted">Progress and academic results</p>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-custom text-center p-4" th:onclick="|window.location='@{/examReportByExam}'|">
+                <div class="icon"><i class="bi bi-file-earmark-bar-graph-fill"></i></div>
+                <h5>Exam Reports (By Exam)</h5>
+                <p class="text-muted">Exam-wise statistics and analysis</p>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card card-custom text-center p-4" th:onclick="|window.location='@{/examReportByStudent}'|">
+                <div class="icon"><i class="bi bi-clipboard-data-fill"></i></div>
+                <h5>Exam Reports (By Student)</h5>
+                <p class="text-muted">Student-wise exam performance</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--footer section---->
+<footer class="text-center p-3 text-white bg-dark mt-2">
+    &copy; 2026 Mthree Academic Management System - Reports Section
+</footer>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</html>

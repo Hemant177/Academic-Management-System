@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Exam Reports By Exam Name</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <style>
+
+        body {
+            background-color: #f5f7fa;
+            font-family: "Times New Roman",'Segoe UI', sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar-custom {
+            background-color: #1f3c4d;
+            padding: 12px 40px;
+        }
+
+        .navbar-custom .navbar-brand {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: white !important;
+        }
+
+        .navbar-custom .nav-link {
+            color: #dbe7ee !important;
+            font-weight: 500;
+            margin-left: 25px;
+            transition: 0.3s;
+        }
+
+        .navbar-custom .nav-link:hover {
+            color: #ffffff !important;
+            transform: translateY(-2px);
+        }
+
+        /* HERO */
+        .hero-section {
+            background: linear-gradient(90deg, #1f3c4d, #244b5a);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+
+        .search-card {
+            margin: 80px auto;
+            margin: 35px;
+            padding: 20px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+            background-color: #284b60;
+            color: white;
+        }
+
+        .search-title {
+            font-weight: 600;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-search {
+            background-color: transparent; /* Bootstrap green */
+            border: none;
+            font-weight: 500;
+            border: 2px solid;
+        }
+
+        .btn-search:hover {
+            background-color: #182f3c;
+            border: 2px solid ;
+        }
+        .exam-card {
+            background-color: #1f3c4d;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+
+        .exam-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 22px rgba(0,0,0,0.15);
+            background-color: #244b5a;
+        }
+
+        .exam-icon {
+            font-size: 38px;
+        }
+    </style>
+</head>
+<body>
+<!--  NAVBAR -->
+<nav class="navbar navbar-dark navbar-custom sticky-top">
+    <div class="d-flex align-items-center">
+        <a class="navbar-brand d-flex align-items-center" href="dashboard.html">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" width="35" class="me-2">
+            Mthree Academy
+        </a>
+    </div>
+
+    <div class="d-flex">
+        <a class="nav-link" th:href="@{/courseReport}">Course Reports</a>
+        <a class="nav-link" th:href="@{/staffReport}">Staff Reports</a>
+        <a class="nav-link" th:href="@{/studentReport}">Student Reports</a>
+        <a class="nav-link" th:href="@{/examReportByExam}">Exam Reports</a>
+        <a class="nav-link" th:href="@{/examReportByStudent}">Student Exam Reports</a>
+    </div>
+</nav>
+
+
+
+
+<div class="search-card">
+    <h3 class="search-title">Search Exam Report</h3>
+
+    <div >
+
+        <!--  Search by Name -->
+        <form th:action="@{/examReportByExam}" method="get">
+            <label class="form-label">Search by Exam Name</label>
+
+            <div class="input-group input-group-lg">
+                <input type="text"
+                       name="examName"
+                       class="form-control"
+                       placeholder="e.g. Java Final"
+                       th:value="${examName}">
+
+                <button type="submit" class="btn btn-search text-white px-4">
+                    <i class="bi bi-search"></i>
+                </button>
+            </div>
+        </form>
+
+
+        <!--  Search by Course -->
+        <form th:action="@{/examReportByExam}" method="get" class="mt-4">
+            <label class="form-label">Filter by Course</label>
+
+            <div class="input-group input-group-lg">
+                <select name="courseId" class="form-select" required>
+                    <option value="" disabled selected>Select Course</option>
+                    <option th:each="course : ${courses}"
+                            th:value="${course.courseId}"
+                            th:text="${course.courseName}"
+                            th:selected="${course.courseId == selectedCourseId}">
+                    </option>
+                </select>
+
+                <button type="submit" class="btn btn-search text-white px-4">
+                    <i class="bi bi-funnel-fill"></i>
+                </button>
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+
+<!--  Show Exams as Cards -->
+<!-- Exams Grid -->
+<div class="container mt-5" th:if="${exams != null}">
+    <h3 class="mb-4 text-center" style="color:#1f3c4d; font-weight:600;">
+        Available Exams
+    </h3>
+
+    <div class="row g-4">
+
+        <div class="col-md-3" th:each="exam : ${exams}">
+            <div class="exam-card text-white p-4 text-center"
+                 th:onclick="|window.location='@{/examReportByExam/{id}(id=${exam.examId})}'|">
+
+                <div class="exam-icon mb-3"> <i class="bi bi-file-earmark-text-fill"></i></div>
+
+                <h5 class="fw-bold" th:text="${exam.course.courseName}"></h5>
+
+                <p class="mb-1">Date:<span th:text="${exam.durationMinutes}"></span></p>
+
+                <p>Total Marks: <span th:text="${exam.totalMarks}"></span></p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- No Results Message -->
+<div class="container mt-4 text-center" th:if="${exams != null and #lists.isEmpty(exams)}">
+    <div class="alert alert-warning shadow-sm">
+        <i class="bi bi-exclamation-circle"></i>
+        No exams found with that name.
+    </div>
+</div>
+
+<!--footer section---->
+<footer class="text-center p-3 text-white bg-dark mt-2">
+    &copy; 2026 Mthree Academic Management System - Reports Section
+</footer>
+
+
+</body>
+</html>

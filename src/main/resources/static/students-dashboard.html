@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="view-courses.html">Courses</a>
+        <a href="add-intake.html">Intake</a>
+        <a href="view-staff.html">Staff</a>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn active">Students ▾</a>
+            <div class="dropdown-content">
+                <a href="students-dashboard.html">Student Dashboard</a>
+                <a href="add-student.html">Add Student</a>
+                <a href="view-students.html">View Students</a>
+                <a href="enroll-student.html">Enroll Student</a>
+                <a href="view-enrollments.html">View Enrollments</a>
+                <a href="locations.html">Manage Locations</a>
+            </div>
+        </div>
+
+        <a href="exam.html">Exam</a>
+
+        <button onclick="logout()" style="background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="dashboard-hero">
+    <h1>Student Management</h1>
+    <p>Manage Students, Enrollments & Locations from one place</p>
+</section>
+
+
+<!-- STAT CARDS -->
+<section class="stats">
+    <div class="stat-card">
+        <h2>👩‍🎓</h2>
+        <p>Total Students</p>
+        <span id="studentCount">--</span>
+    </div>
+
+    <div class="stat-card">
+        <h2>📄</h2>
+        <p>Total Enrollments</p>
+        <span id="enrollCount">--</span>
+    </div>
+
+    <div class="stat-card">
+        <h2>📍</h2>
+        <p>Locations</p>
+        <span id="locationCount">--</span>
+    </div>
+</section>
+
+
+<!-- ACTION CARDS -->
+<section class="dashboard-actions">
+
+    <div class="action-card" onclick="location.href='add-student.html'">
+        <i class="fa-solid fa-user-plus"></i>
+        <h3>Add Student</h3>
+        <p>Create new students</p>
+    </div>
+
+    <div class="action-card" onclick="location.href='view-students.html'">
+        <i class="fa-solid fa-users"></i>
+        <h3>View Students</h3>
+        <p>List of all students</p>
+    </div>
+
+    <div class="action-card" onclick="location.href='enroll-student.html'">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <h3>Enroll Student</h3>
+        <p>Assign students to courses</p>
+    </div>
+
+    <div class="action-card" onclick="location.href='locations.html'">
+        <i class="fa-solid fa-location-dot"></i>
+        <h3>Manage Locations</h3>
+        <p>Add or update locations</p>
+    </div>
+
+</section>
+
+
+<footer>
+    © 2026 Academic Management System
+</footer>
+
+
+<script src="js/student-dashboard.js">
+</script>
+
+<script src="js/logout.js"></script>
+</body>
+</html>

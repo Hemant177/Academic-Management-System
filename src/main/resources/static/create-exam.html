@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Exam | Mthree Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+    </div>
+</nav>
+
+<div class="main-content">
+    <div class="form-card wide">
+        <h2>Create Exam</h2>
+
+        <div class="form-group">
+            <input
+                    type="number"
+                    id="courseId"
+                    class="form-input"
+                    placeholder="Enter Course ID"
+                    required
+            >
+        </div>
+
+        <div id="questionsContainer"></div>
+
+        <div class="form-group">
+            <button id="createExamBtn">
+                Create Exam
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="js/create-exam.js"></script>
+</body>
+</html>

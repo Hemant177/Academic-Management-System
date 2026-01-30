@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Course</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+             alt="logo" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-course.html">Add Course</a>
+        <a href="view-courses.html">View Courses</a>
+        <button onclick="logout()" style="background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
+
+<div class="main-content">
+    <div class="form-card">
+        <h2>Add Course</h2>
+
+        <input id="code" placeholder="Course Code">
+        <input id="name" placeholder="Course Name">
+        <input id="description" placeholder="Course Description">
+        <select id="location" style="width: 96%;">
+            <option value="">Select Location</option>
+        </select>
+        <input id="duration" type="number" placeholder="Duration (months)">
+
+        <select id="level" style="width: 96%;">
+            <option>Beginner</option>
+            <option>Intermediate</option>
+            <option>Advanced</option>
+        </select>
+
+        <button onclick="addCourse()">Save Course</button>
+    </div>
+</div>
+
+<footer>© 2026 Academic Management System</footer>
+
+<script src="js/course.js"></script>
+<script src="js/logout.js"></script>
+</body>
+</html>

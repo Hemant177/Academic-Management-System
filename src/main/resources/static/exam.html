@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Exam | Mthree Academy</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+    </div>
+</nav>
+
+<div class="main-content">
+    <div class="form-card">
+        <h2>Start Exam</h2>
+
+        <div class="instructions">
+            <h3>Instructions</h3>
+            <ul>
+                <li>Enter your valid <b>Student ID</b> and <b>Course ID</b>.</li>
+                <li>You can attempt the exam <b>only if you are enrolled</b> in the course.</li>
+                <li>The exam contains <b>20 multiple-choice questions</b>.</li>
+                <li>Each correct answer carries <b>+4 marks</b>.</li>
+                <li>Each wrong answer carries <b>-1 mark</b>.</li>
+                <li><b>Unattempted questions carry 0 marks</b>.</li>
+                <li>Total exam duration is <b>20 minutes</b>.</li>
+                <li>The exam will be <b>auto-submitted</b> when the time is over.</li>
+                <li>You are allowed <b>only one attempt</b>.</li>
+            </ul>
+        </div>
+
+        <div class="form-row">
+            <input type="number" id="studentId" class="form-input" placeholder="Student ID" required>
+
+            <input type="number" id="courseId" class="form-input" placeholder="Course ID" required>
+        </div>
+
+        <div class="form-group">
+            <button id="startExamBtn" onclick="startExam()">
+                Start Test
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="js/student-exam.js"></script>
+</body>
+</html>

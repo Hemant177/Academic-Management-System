@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Intake</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+             alt="logo" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-intake.html">Add Intake</a>
+        <a href="view-intake.html">View Intake</a>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+<div class="main-content">
+    <div class="form-card">
+
+        <h2>Add Intake</h2>
+        <p class="form-subtitle">Create a new intake for an existing course</p>
+
+        <div class="form-grid">
+            <div>
+                <label>Course ID</label>
+                <select id="courseId">
+                    <option value="">Select Course</option>
+                </select>
+
+            </div>
+
+            <div>
+                <label>Intake Name</label>
+                <input id="name" placeholder="Eg: 2024-25 Batch">
+            </div>
+
+            <div>
+                <label>Start Date</label>
+                <input id="start" type="date">
+            </div>
+
+            <div>
+                <label>End Date</label>
+                <input id="end" type="date">
+            </div>
+
+            <div class="full">
+                <label>Total Seats</label>
+                <input id="seats" type="number" placeholder="Enter total seats">
+            </div>
+        </div>
+
+        <button onclick="addIntake()">Save Intake</button>
+    </div>
+</div>
+
+<footer>© 2026 Academic Management System</footer>
+
+<script src="js/intake.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Intakes</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-intake.html">Add Intake</a>
+        <a href="view-intake.html" class="active">View Intake</a>
+    </div>
+</nav>
+
+<div class="table-wrapper">
+    <h2 class="page-title">All Intakes</h2>
+
+    <table class="data-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Course ID</th>
+            <th>Intake Name</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Total Seats</th>
+            <th>Available</th>
+            <th>Status</th>
+        </tr>
+        </thead>
+
+        <tbody id="intakeTable"></tbody>
+    </table>
+</div>
+
+<script src="js/view-intake.js"></script>
+</body>
+</html>

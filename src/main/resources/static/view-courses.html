@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Courses</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png"
+             alt="logo" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="add-course.html">Add Course</a>
+        <a href="view-courses.html">View Courses</a>
+        <button onclick="logout()" style="background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
+<!-- TABLE -->
+<div class="main-content">
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Level</th>
+            <th> Staff Assigned</th>
+            <th>Duration (Months)</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="courseTable"></tbody>
+    </table>
+</div>
+
+<footer>© 2026 Academic Management System</footer>
+
+<!-- MODAL BACKDROP -->
+<div id="modalBackdrop" class="modal-backdrop hidden"></div>
+
+<!-- EDIT COURSE MODAL -->
+<div id="editModal" class="modal hidden">
+    <h3 id="modalTitle">Edit Course</h3>
+
+    <input id="modalCourseName" placeholder="Course Name">
+    <select id="modalCourseLevel" class="form-input">
+        <option value="Beginner">Beginner</option>
+        <option value="Intermediate">Intermediate</option>
+        <option value="Advanced">Advanced</option>
+    </select>
+    <input id="modalCourseDuration" placeholder="Duration (Months)">
+
+    <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeCourseModal()">Cancel</button>
+        <button class="btn-save" onclick="saveCourseChanges()">Save</button>
+    </div>
+</div>
+
+<!-- ASSIGN STAFF MODAL -->
+<div id="assignStaffModal" class="modal hidden">
+    <h3>Assign Staff</h3>
+
+    <select id="staffSelect" class="form-input"></select>
+
+    <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeAssignStaffModal()">Cancel</button>
+        <button class="btn-save" onclick="assignStaff()">Assign</button>
+    </div>
+</div>
+
+<!-- LOAD JS LAST -->
+<script src="js/course.js"></script>
+<script src="js/logout.js"></script>
+</body>
+</html>

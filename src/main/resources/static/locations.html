@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Manage Locations</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- NAVBAR SAME AS OTHER PAGES -->
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="view-courses.html">Courses</a>
+        <a href="add-intake.html">Intake</a>
+        <a href="view-staff.html">Staff</a>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn active">Students ▾</a>
+            <div class="dropdown-content">
+                <a href="students-dashboard.html">Student Dashboard</a>
+                <a href="add-student.html">Add Student</a>
+                <a href="view-students.html">View Students</a>
+                <a href="enroll-student.html">Enroll Student</a>
+                <a href="view-enrollments.html">View Enrollments</a>
+                <a href="locations.html" class="active">Manage Locations</a>
+            </div>
+        </div>
+
+        <a href="exam.html">Exam</a>
+        <button onclick="logout()" style="background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
+
+<section class="dashboard-hero">
+    <h1>Manage Locations</h1>
+    <p>Add or update locations</p>
+</section>
+
+
+<!-- ADD LOCATION FORM -->
+<div class="form-container">
+    <div class="form-card">
+
+        <h2>Add Location</h2>
+
+        <form id="locationForm">
+
+            <input type="text" id="locationName" placeholder="Location Name" required>
+
+            <input type="text" id="address" placeholder="Address" required>
+
+            <input type="text" id="city" placeholder="City" required>
+
+            <input type="text" id="state" placeholder="State" required>
+
+            <button type="submit" class="save-btn">Save Location</button>
+        </form>
+
+        <p id="msg"></p>
+
+    </div>
+</div>
+
+
+
+<!-- TABLE -->
+<div class="table-wrapper">
+    <h2 class="page-title">All Locations</h2>
+
+    <table class="data-table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Location</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Actions</th>   <!-- NEW -->
+        </tr>
+        </thead>
+
+        <tbody id="locationTable"></tbody>
+    </table>
+</div>
+
+
+<script src="js/locations.js"></script>
+<script src="js/logout.js"></script>
+
+</body>
+</html>

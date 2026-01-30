@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<!-- NAVBAR (same as before) -->
+<nav class="navbar">
+    <div class="nav-left">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png" class="logo">
+        <span class="project-name">Mthree Academy</span>
+    </div>
+
+    <div class="nav-right">
+        <a href="dashboard.html" class="active">Dashboard</a>
+        <a href="view-courses.html">Courses</a>
+        <a href="add-intake.html">Intake</a>
+        <a href="view-staff.html">Staff</a>
+<!--<a href="exam.html">Exam</a>-->
+
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Students ▾</a>
+            <div class="dropdown-content">
+                <a href="students-dashboard.html">Student Dashboard</a>
+                <a href="add-student.html">Add Student</a>
+                <a href="view-students.html">View Students</a>
+                <a href="enroll-student.html">Enroll Student</a>
+                <a href="view-enrollments.html">View Enrollments</a>
+                <a href="locations.html">Manage Locations</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Exams ▾</a>
+            <div class="dropdown-content">
+                <a href="create-exam.html">Add Exam</a>
+                <a href="student-exam.html">Attempt Exam</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#" class="dropbtn">Reports ▾</a>
+            <div class="dropdown-content">
+                <a href="/reports">Home</a>
+                <a href="/courseReport">Course Reports</a>
+                <a href="/staffReport">Staff Reports</a>
+                <a href="/studentReport">Student Reports</a>
+                <a href="/examReportByExam">Exam Reports (By Exam)</a>
+                <a href="/examReportByStudent">Exam Reports (By Student)</a>
+            </div>
+        </div>
+
+        <button onclick="logout()" style="background: #e74c3c; color: white; border: none; padding: 8px 16px; border-radius: 5px; cursor: pointer; margin-left: 10px;">Logout</button>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="dashboard-hero">
+    <h1>Welcome to Mthree Academy</h1>
+    <p>Manage Courses, Intakes & Staff from one place</p>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats">
+    <div class="stat-card" onclick="location.href='view-courses.html'">
+        <h2>📘</h2>
+        <p>Total Courses</p>
+        <span id="courseCount">--</span>
+
+    </div>
+
+    <div class="stat-card" onclick="location.href='add-intake.html'">
+        <h2>📅</h2>
+        <p>Active Intakes</p>
+        <span id="intakeCount">--</span>
+    </div>
+
+
+    <div class="stat-card" onclick="location.href='view-staff.html'">
+        <h2>👨‍🏫</h2>
+        <p>Staff Members</p>
+        <span id="staffCount">--</span>
+    </div>
+</section>
+
+<!-- ACTION CARDS -->
+<section class="dashboard-actions">
+    <div class="action-card" onclick="location.href='add-course.html'">
+        <i class="fa-solid fa-book"></i>
+        <h3>Add Course</h3>
+        <p>Create new academic courses</p>
+    </div>
+
+    <div class="action-card" onclick="location.href='add-intake.html'">
+        <i class="fa-solid fa-calendar-days"></i>
+        <h3>Add Intake</h3>
+        <p>Plan batches & seats</p>
+    </div>
+
+    <div class="action-card" onclick="location.href='add-staff.html'">
+        <i class="fa-solid fa-user-tie"></i>
+        <h3>Add Staff</h3>
+        <p>Assign staff to courses</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Academic Management System
+</footer>
+
+<script>
+    fetch("http://localhost:8080/api/courses/count")
+    .then(res => res.json())
+    .then(count => {
+        document.getElementById("courseCount").innerText = count;
+    });
+
+    fetch("http://localhost:8080/api/staff/count")
+    .then(res => res.json())
+    .then(count => {
+        document.getElementById("staffCount").innerText = count;
+    });
+
+    fetch("http://localhost:8080/api/intakes/count")
+        .then(res => res.json())
+        .then(count => {
+            document.getElementById("intakeCount").innerText = count;
+        });
+
+</script>
+    <script src="js/logout.js"></script>
+</body>
+</html>
