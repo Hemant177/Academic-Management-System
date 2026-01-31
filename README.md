@@ -91,7 +91,7 @@ Each team independently developed their module and ensured seamless integration 
 ### 👥 Contributors
 | Name | Contribution | Email |
 |------|-------------|-------|
-| Jatin | Student Management (CRUD) | jatin@email.com |
+| Jatin | Student Management (CRUD) | jatinbaheti07@gmail.com |
 | Nithisha | Intake Management & Seat Logic | nithishabollena26@gmail.com |
 | Sunil | Enrollment & Course–Intake Mapping | sunilnellapally@gmail.com |
 | Prajakta | Location Management & Validation | bugadeprajakta26@gmail.com|
