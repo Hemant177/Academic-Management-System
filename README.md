@@ -135,10 +135,16 @@ Each team independently developed their module and ensured seamless integration 
 ### 👥 Contributors
 | Name | Contribution | Email |
 |------|-------------|-------|
-| Anurag | Create & Submit Exam (Backend) | anuragkharbade47@gmail.com |
+| Anurag | Create & Submit Exam Functionality | anuragkharbade47@gmail.com |
 | Rajeshwari | Start Exam, Entity Design | rajeshwarisonawane231@gmail.com  |
 | Varsha | Result Page & Frontend | varsha.gentechi@gmail.com |
 | Riya | Frontend & Data Handling | riyasingh52109@gmail.com |
+
+### Individual Contributions
+- **Anurag:** Create Exam & Submit Exam functionality (complete backend logic, validations, APIs, integration)  
+- **Rajeshwari:** Start Exam functionality, exam entity design, integration & debugging
+- **Varsha:** Result page development and frontend implementation
+- **Riya:** Frontend development and exam data handling
 
 ### 🖼️ Team D – UI Screenshots
 | Create Exam | Start Exam |
@@ -175,6 +181,13 @@ Each team independently developed their module and ensured seamless integration 
 | Ankita | Student & Exam Reports | naiduankita21@gmail.com |
 | Pavan | Exam Reports & Statistics | pavanbhumpalli@gmail.com |
 | Sridhar | Course Reports & Dashboard | sridhararasada@gmail.com |
+
+
+### Individual Contributions
+- **Aishwarya:** Staff reports with staff–course–location workload mapping 
+- **Ankita:** Student performance reports and exam reports by student name
+- **Pavan:** Exam-wise reports with pass/fail statistics, average, min, max marks, absentees
+- **Sridhar:** Course reports dashboard (students enrolled, staff assigned, scheduled exams)
 
 ### 🖼️ Team E – UI Screenshots
 | Reports Dashboard | Course Report |
