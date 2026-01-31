@@ -64,7 +64,7 @@ Each team independently developed their module and ensured seamless integration 
 
 ### 🖼️ Screenshots
 📁 Folder: `Screenshots/team-a/`  
-Includes: Login, Dashboard, Add Course, View Courses, Add Intake, Add Staff, Staff–Course Mapping (15 screenshots)
+Includes: Login, Dashboard, Add Course, View Courses, Add Intake, Add Staff, Staff–Course Mapping 
 
 ---
 
@@ -96,7 +96,7 @@ All Team B members collaboratively worked on frontend development, backend APIs,
 
 ### 🖼️ Screenshots
 📁 Folder: `Screenshots/team-b/`  
-Includes: Student CRUD, Intake creation, Seat allocation, Enrollment flow, Location mapping (15 screenshots)
+Includes: Student CRUD, Intake creation, Seat allocation, Enrollment flow, Location mapping 
 
 ---
 
@@ -123,7 +123,7 @@ Includes: Student CRUD, Intake creation, Seat allocation, Enrollment flow, Locat
 
 ### 🖼️ Screenshots
 📁 Folder: `Screenshots/team-d/`  
-Includes: Create Exam, Start Exam, Submit Exam, Result Page (15 screenshots)
+Includes: Create Exam, Start Exam, Submit Exam, Result Page 
 
 ---
 
@@ -156,7 +156,7 @@ Includes: Create Exam, Start Exam, Submit Exam, Result Page (15 screenshots)
 
 ### 🖼️ Screenshots
 📁 Folder: `Screenshots/team-e/`  
-Includes: Reports dashboard, Course reports, Staff reports, Student reports, Exam analytics (15 screenshots)
+Includes: Reports dashboard, Course reports, Staff reports, Student reports, Exam analytics 
 
 ---
 
