@@ -63,9 +63,9 @@ Each team independently developed their module and ensured seamless integration 
 |-----------|-------------|
 | ![](Screenshots/team-a/addcourse.png) | ![](Screenshots/team-a/course.png) |
 
-| Course Edit | View Courses |
+| Staff Assign | View Courses |
 |-----------|-------------|
-| ![](Screenshots/team-a/course2.png) | ![](Screenshots/team-a/04-viewcourses.png) |
+| ![](Screenshots/team-a/course2.png) | ![](Screenshots/team-a/viewcourses.png) |
 
 | Intake | Add Staff |
 |-----------|-----------|
