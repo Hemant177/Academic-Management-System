@@ -51,21 +51,29 @@ Each team independently developed their module and ensured seamless integration 
 - **Backend Development:** All Team A members collaboratively  
 
 ### 🖼️ Team A – UI Screenshots
+| Landing Page 
+|-------------|
+| ![](Screenshots/team-a/landing.png)
+
 | Login | Dashboard |
 |------|----------|
-| ![](Screenshots/team-a/01-login.png) | ![](Screenshots/team-a/02-dashboard.png) |
+| ![](Screenshots/team-a/login.png) | ![](Screenshots/team-a/dashboard.png) |
 
-| Add Course | View Courses |
+| Add Course | Courses |
 |-----------|-------------|
-| ![](Screenshots/team-a/03-add-course.png) | ![](Screenshots/team-a/04-view-course.png) |
+| ![](Screenshots/team-a/addcourse.png) | ![](Screenshots/team-a/course.png) |
+
+| Course Edit | View Courses |
+|-----------|-------------|
+| ![](Screenshots/team-a/course2.png) | ![](Screenshots/team-a/04-viewcourses.png) |
 
 | Add Intake | Add Staff |
 |-----------|-----------|
-| ![](Screenshots/team-a/05-add-intake.png) | ![](Screenshots/team-a/06-add-staff.png) |
+| ![](Screenshots/team-a/05-intake.png) | ![](Screenshots/team-a/add-staff.png) |
 
-| Staff–Course Mapping | Logout |
+| View Stafs | Logout |
 |--------------------|--------|
-| ![](Screenshots/team-a/07-staff-course-map.png) | ![](Screenshots/team-a/10-logout.png) |
+| ![](Screenshots/team-a/view-staff.png) | ![](Screenshots/team-a/10-logout.png) |
 
 📁 Additional screenshots: `Screenshots/team-a/`
 
