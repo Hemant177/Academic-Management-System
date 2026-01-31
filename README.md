@@ -11,15 +11,16 @@ The project follows a **modular, team-based architecture**, where each team is r
 
 This system is designed to digitize and simplify academic operations such as:
 
-- Course and intake management
-- Staff and student handling
-- Enrollment, attendance, and exams
-- Secure authentication and authorization
-- Centralized dashboard and analytical reports
+- Course and intake management  
+- Staff and student handling  
+- Enrollment, attendance, and exams  
+- Secure authentication and authorization  
+- Centralized dashboard and analytical reports  
 
 Each team independently developed their module and ensured seamless integration using shared REST APIs and a common database.
 
 ---
+
 ## 🧩 Team Responsibilities, Individual Contributions & Screenshots
 
 ---
@@ -42,29 +43,31 @@ Each team independently developed their module and ensured seamless integration 
 | Rohit | Frontend UI, Course & Staff CRUD | rohit@email.com |
 
 ### Individual Contributions
-- **Security & Database Design:**  
-  Hemant, Abhishek  
-  (Spring Security configuration, authentication flow, database schema design)
+- **Security & Database Design:** Hemant, Abhishek  
+- **Frontend Design (UI/UX):** Hemant, Rohit  
+- **Staff Entity Design:** Abhishek  
+- **Course Entity Design:** Anurag  
+- **Course & Staff CRUD Operations:** Rohit, Anurag, Hemant  
+- **Backend Development:** All Team A members collaboratively  
 
-- **Frontend Design (UI/UX):**  
-  Hemant, Rohit  
-  (Login/logout pages, dashboard, navigation bar, forms, styling)
+### 🖼️ Team A – UI Screenshots
+| Login | Dashboard |
+|------|----------|
+| ![](Screenshots/team-a/01-login.png) | ![](Screenshots/team-a/02-dashboard.png) |
 
-- **Staff Entity Design:**  
-  Abhishek
+| Add Course | View Courses |
+|-----------|-------------|
+| ![](Screenshots/team-a/03-add-course.png) | ![](Screenshots/team-a/04-view-course.png) |
 
-- **Course Entity Design:**  
-  Anurag
+| Add Intake | Add Staff |
+|-----------|-----------|
+| ![](Screenshots/team-a/05-add-intake.png) | ![](Screenshots/team-a/06-add-staff.png) |
 
-- **Course & Staff CRUD Operations:**  
-  Rohit, Anurag, Hemant
+| Staff–Course Mapping | Logout |
+|--------------------|--------|
+| ![](Screenshots/team-a/07-staff-course-map.png) | ![](Screenshots/team-a/10-logout.png) |
 
-- **Backend Development:**  
-  Contributed collaboratively by all Team A members
-
-### 🖼️ Screenshots
-📁 Folder: `Screenshots/team-a/`  
-Includes: Login, Dashboard, Add Course, View Courses, Add Intake, Add Staff, Staff–Course Mapping 
+📁 Additional screenshots: `Screenshots/team-a/`
 
 ---
 
@@ -86,17 +89,29 @@ Includes: Login, Dashboard, Add Course, View Courses, Add Intake, Add Staff, Sta
 | Prajakta | Location Management & Validation | prajakta@email.com |
 
 ### Individual Contributions
-- **Jatin:** Implemented complete Student Management module (Add, Edit, View, Delete)  
-- **Nithisha:** Designed Intake Management with seat allocation and OPEN/CLOSED logic  
-- **Sunil:** Developed Student Enrollment and course–intake mapping  
-- **Prajakta:** Implemented Location Management with validations  
+- **Jatin:** Student Management (Add, Edit, View, Delete)  
+- **Nithisha:** Intake Management with seat allocation & OPEN/CLOSED logic  
+- **Sunil:** Student Enrollment & course–intake mapping  
+- **Prajakta:** Location Management with validations  
 
-### Team Collaboration
-All Team B members collaboratively worked on frontend development, backend APIs, database integration, and testing.
+### 🖼️ Team B – UI Screenshots
+| Students | Add Student |
+|---------|-------------|
+| ![](Screenshots/team-b/01-student-list.png) | ![](Screenshots/team-b/02-add-student.png) |
 
-### 🖼️ Screenshots
-📁 Folder: `Screenshots/team-b/`  
-Includes: Student CRUD, Intake creation, Seat allocation, Enrollment flow, Location mapping 
+| Edit Student | Intake Creation |
+|-------------|----------------|
+| ![](Screenshots/team-b/03-edit-student.png) | ![](Screenshots/team-b/04-intake-create.png) |
+
+| Seat Allocation | Enrollment |
+|----------------|------------|
+| ![](Screenshots/team-b/05-seat-allocation.png) | ![](Screenshots/team-b/06-enrollment.png) |
+
+| Location | Location Mapping |
+|---------|------------------|
+| ![](Screenshots/team-b/07-location.png) | ![](Screenshots/team-b/08-location-map.png) |
+
+📁 Additional screenshots: `Screenshots/team-b/`
 
 ---
 
@@ -113,17 +128,26 @@ Includes: Student CRUD, Intake creation, Seat allocation, Enrollment flow, Locat
 | Anurag | Create & Submit Exam (Backend) | anurag@email.com |
 | Rajeshwari | Start Exam, Entity Design | rajeshwari@email.com |
 | Varsha | Result Page & Frontend | varsha@email.com |
-| Riya | Frontend Development & Data Handling | riya@email.com |
+| Riya | Frontend & Data Handling | riya@email.com |
 
-### Individual Contributions
-- **Anurag:** Designed and implemented Create Exam and Submit Exam functionality end-to-end  
-- **Rajeshwari:** Implemented Start Exam functionality, entity design, integration & debugging  
-- **Varsha:** Developed Result Page and contributed to frontend  
-- **Riya:** Handled frontend development and data management  
+### 🖼️ Team D – UI Screenshots
+| Create Exam | Start Exam |
+|------------|------------|
+| ![](Screenshots/team-d/01-create-exam.png) | ![](Screenshots/team-d/02-start-exam.png) |
 
-### 🖼️ Screenshots
-📁 Folder: `Screenshots/team-d/`  
-Includes: Create Exam, Start Exam, Submit Exam, Result Page 
+| Question Page | Submit Exam |
+|---------------|------------|
+| ![](Screenshots/team-d/03-question-page.png) | ![](Screenshots/team-d/04-submit-exam.png) |
+
+| Result Page | Pass / Fail |
+|-------------|-------------|
+| ![](Screenshots/team-d/05-result.png) | ![](Screenshots/team-d/06-pass-fail.png) |
+
+| Score View | Timer |
+|------------|-------|
+| ![](Screenshots/team-d/07-score-view.png) | ![](Screenshots/team-d/08-timer.png) |
+
+📁 Additional screenshots: `Screenshots/team-d/`
 
 ---
 
@@ -131,36 +155,41 @@ Includes: Create Exam, Start Exam, Submit Exam, Result Page
 
 ### Responsibilities
 - Reports module design and architecture  
-- Course, staff, student, and examination reports  
+- Course, staff, student, and exam reports  
 - Reports dashboard UI  
 - Aggregated data handling using optimized SQL queries  
-- Database-level reporting and backend integration  
+- Backend integration with core modules  
 
 ### 👥 Contributors
 | Name | Contribution | Email |
 |------|-------------|-------|
 | Aishwarya | Staff Reports & Workload Mapping | aishwarya@email.com |
-| Ankita | Student & Exam Reports (by Student) | ankita@email.com |
+| Ankita | Student & Exam Reports | ankita@email.com |
 | Pavan | Exam Reports & Statistics | pavan@email.com |
 | Sridhar | Course Reports & Dashboard | sridhar@email.com |
 
-### Individual Contributions
-- **Aishwarya:** Staff-to-course and location workload reports  
-- **Ankita:** Student performance and exam reports with expandable views  
-- **Pavan:** Exam-wise statistics (pass/fail, avg, min, max, absentees)  
-- **Sridhar:** Course-level dashboards with students, staff, and exams  
+### 🖼️ Team E – UI Screenshots
+| Reports Dashboard | Course Report |
+|------------------|---------------|
+| ![](Screenshots/team-e/01-reports-dashboard.png) | ![](Screenshots/team-e/02-course-report.png) |
 
-### Architecture & Integration
-- **Reports Architecture:** Sridhar & Aishwarya  
-- **Data Flow & Integration:** Pavan & Ankita  
+| Staff Report | Student Report |
+|--------------|----------------|
+| ![](Screenshots/team-e/03-staff-report.png) | ![](Screenshots/team-e/04-student-report.png) |
 
-### 🖼️ Screenshots
-📁 Folder: `Screenshots/team-e/`  
-Includes: Reports dashboard, Course reports, Staff reports, Student reports, Exam analytics 
+| Exam Report | Pass / Fail Stats |
+|-------------|------------------|
+| ![](Screenshots/team-e/05-exam-report.png) | ![](Screenshots/team-e/06-pass-fail.png) |
+
+| Filters | Export |
+|---------|--------|
+| ![](Screenshots/team-e/09-filters.png) | ![](Screenshots/team-e/10-export.png) |
+
+📁 Additional screenshots: `Screenshots/team-e/`
 
 ---
 
-## 🔑 Default Admin Credentials
+## 🔐 Default Admin Credentials
 ```text
 Username: admin
 Password: admin123
