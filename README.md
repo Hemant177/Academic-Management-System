@@ -37,17 +37,17 @@ Each team independently developed their module and ensured seamless integration 
 ### 👥 Contributors
 | Name | Contribution | Email |
 |------|-------------|-------|
-| Hemant | Security, Frontend UI, CRUD, DB Design | hemant@email.com |
-| Abhishek | Staff Entity, DB Design | abhishek@email.com |
-| Anurag | Course Entity Design, CRUD | anurag@email.com |
-| Rohit | Frontend UI, Course & Staff CRUD | rohit@email.com |
+| Hemant | Security, Frontend UI, CRUD, DB Design | hemantpatil17072004@gmail.com |
+| Abhishek | Staff Entity, DB Design | abishek09987@gmail.com |
+| Anurag Wande| Course Entity Design, CRUD | wandeanurag006@gmail.com |
+| Rohit | Frontend UI, Course & Staff CRUD | rohitmuchhal160703@gmail.com |
 
 ### Individual Contributions
 - **Security & Database Design:** Hemant, Abhishek  
 - **Frontend Design (UI/UX):** Hemant, Rohit  
 - **Staff Entity Design:** Abhishek  
-- **Course Entity Design:** Anurag  
-- **Course & Staff CRUD Operations:** Rohit, Anurag, Hemant  
+- **Course Entity Design:** Anurag, Wande
+- **Course & Staff CRUD Operations:** Rohit, Anurag Wande, Hemant  
 - **Backend Development:** All Team A members collaboratively  
 
 ### 🖼️ Team A – UI Screenshots
@@ -67,9 +67,9 @@ Each team independently developed their module and ensured seamless integration 
 |-----------|-------------|
 | ![](Screenshots/team-a/course2.png) | ![](Screenshots/team-a/04-viewcourses.png) |
 
-| Add Intake | Add Staff |
+| Intake | Add Staff |
 |-----------|-----------|
-| ![](Screenshots/team-a/05-intake.png) | ![](Screenshots/team-a/add-staff.png) |
+| ![](Screenshots/team-a/intake.png) | ![](Screenshots/team-a/add-staff.png) |
 
 | View Stafs | Logout |
 |--------------------|--------|
@@ -92,9 +92,9 @@ Each team independently developed their module and ensured seamless integration 
 | Name | Contribution | Email |
 |------|-------------|-------|
 | Jatin | Student Management (CRUD) | jatin@email.com |
-| Nithisha | Intake Management & Seat Logic | nithisha@email.com |
-| Sunil | Enrollment & Course–Intake Mapping | sunil@email.com |
-| Prajakta | Location Management & Validation | prajakta@email.com |
+| Nithisha | Intake Management & Seat Logic | nithishabollena26@gmail.com |
+| Sunil | Enrollment & Course–Intake Mapping | sunilnellapally@gmail.com |
+| Prajakta | Location Management & Validation | bugadeprajakta26@gmail.com|
 
 ### Individual Contributions
 - **Jatin:** Student Management (Add, Edit, View, Delete)  
@@ -103,21 +103,23 @@ Each team independently developed their module and ensured seamless integration 
 - **Prajakta:** Location Management with validations  
 
 ### 🖼️ Team B – UI Screenshots
+
+| Add Intake | All Intake |
+|-------------|----------------|
+| ![](Screenshots/team-b/Add-Intake.png) | ![](Screenshots/team-b/All-Intakes.png) |
+
 | Students | Add Student |
 |---------|-------------|
-| ![](Screenshots/team-b/01-student-list.png) | ![](Screenshots/team-b/02-add-student.png) |
+| ![](Screenshots/team-b/Students.png) | ![](Screenshots/team-b/Add-Student.png) |
 
-| Edit Student | Intake Creation |
+| Enroll Student | Enrollements |
 |-------------|----------------|
-| ![](Screenshots/team-b/03-edit-student.png) | ![](Screenshots/team-b/04-intake-create.png) |
+| ![](Screenshots/team-b/Enroll-Student.png) | ![](Screenshots/team-b/Enrollements.png) |
 
-| Seat Allocation | Enrollment |
-|----------------|------------|
-| ![](Screenshots/team-b/05-seat-allocation.png) | ![](Screenshots/team-b/06-enrollment.png) |
 
-| Location | Location Mapping |
+| Add Location | Manage Location Mapping |
 |---------|------------------|
-| ![](Screenshots/team-b/07-location.png) | ![](Screenshots/team-b/08-location-map.png) |
+| ![](Screenshots/team-b/add-location.png) | ![](Screenshots/team-b/manage-locations.png) |
 
 📁 Additional screenshots: `Screenshots/team-b/`
 
@@ -133,10 +135,10 @@ Each team independently developed their module and ensured seamless integration 
 ### 👥 Contributors
 | Name | Contribution | Email |
 |------|-------------|-------|
-| Anurag | Create & Submit Exam (Backend) | anurag@email.com |
-| Rajeshwari | Start Exam, Entity Design | rajeshwari@email.com |
-| Varsha | Result Page & Frontend | varsha@email.com |
-| Riya | Frontend & Data Handling | riya@email.com |
+| Anurag | Create & Submit Exam (Backend) | anuragkharbade47@gmail.com |
+| Rajeshwari | Start Exam, Entity Design | rajeshwarisonawane231@gmail.com  |
+| Varsha | Result Page & Frontend | varsha.gentechi@gmail.com |
+| Riya | Frontend & Data Handling | riyasingh52109@gmail.com |
 
 ### 🖼️ Team D – UI Screenshots
 | Create Exam | Start Exam |
@@ -169,10 +171,10 @@ Each team independently developed their module and ensured seamless integration 
 ### 👥 Contributors
 | Name | Contribution | Email |
 |------|-------------|-------|
-| Aishwarya | Staff Reports & Workload Mapping | aishwarya@email.com |
-| Ankita | Student & Exam Reports | ankita@email.com |
-| Pavan | Exam Reports & Statistics | pavan@email.com |
-| Sridhar | Course Reports & Dashboard | sridhar@email.com |
+| Aishwarya | Staff Reports & Workload Mapping | ksbaishwarya@gmail.com |
+| Ankita | Student & Exam Reports | naiduankita21@gmail.com |
+| Pavan | Exam Reports & Statistics | pavanbhumpalli@gmail.com |
+| Sridhar | Course Reports & Dashboard | sridhararasada@gmail.com |
 
 ### 🖼️ Team E – UI Screenshots
 | Reports Dashboard | Course Report |
