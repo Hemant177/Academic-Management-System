@@ -141,19 +141,17 @@ Each team independently developed their module and ensured seamless integration 
 ### 🖼️ Team D – UI Screenshots
 | Create Exam | Start Exam |
 |------------|------------|
-| ![](Screenshots/team-d/01-create-exam.png) | ![](Screenshots/team-d/02-start-exam.png) |
+| ![](Screenshots/team-d/create-exam.png) | ![](Screenshots/team-d/exam.png) |
 
 | Question Page | Submit Exam |
 |---------------|------------|
-| ![](Screenshots/team-d/03-question-page.png) | ![](Screenshots/team-d/04-submit-exam.png) |
+| ![](Screenshots/team-d/exam-question1.png) | ![](Screenshots/team-d/examquestion2.png) |
 
-| Result Page | Pass / Fail |
-|-------------|-------------|
-| ![](Screenshots/team-d/05-result.png) | ![](Screenshots/team-d/06-pass-fail.png) |
+| Result Page 
+|-------------|
+| ![](Screenshots/team-d/result.png)
 
-| Score View | Timer |
-|------------|-------|
-| ![](Screenshots/team-d/07-score-view.png) | ![](Screenshots/team-d/08-timer.png) |
+
 
 📁 Additional screenshots: `Screenshots/team-d/`
 
@@ -179,19 +177,41 @@ Each team independently developed their module and ensured seamless integration 
 ### 🖼️ Team E – UI Screenshots
 | Reports Dashboard | Course Report |
 |------------------|---------------|
-| ![](Screenshots/team-e/01-reports-dashboard.png) | ![](Screenshots/team-e/02-course-report.png) |
+| ![](Screenshots/team-e/1ReportsHome.png) | ![](Screenshots/team-e/CourseReport1-cont.png) |
 
-| Staff Report | Student Report |
+| Course Report | Course Report |
+|------------------|---------------|
+| ![](Screenshots/team-e/CourseReport2-cont.png) | ![](Screenshots/team-e/CourseReport2.png) |
+
+| Staff Report | Staff Report |
 |--------------|----------------|
-| ![](Screenshots/team-e/03-staff-report.png) | ![](Screenshots/team-e/04-student-report.png) |
+| ![](Screenshots/team-e/StaffReports1.jpeg) | ![](Screenshots/team-e/StaffReports2.jpeg) |
 
-| Exam Report | Pass / Fail Stats |
+| Staff Report | Staff Report |
+|--------------|----------------|
+| ![](Screenshots/team-e/StaffReports3.jpeg) | ![](Screenshots/team-e/StaffReportsFilter1.jpeg) |
+
+| Staff Report | Staff Report Filter |
+|--------------|----------------|
+| ![](Screenshots/team-e/StaffReportsFilter2.jpeg) | ![](Screenshots/team-e/StaffReportsFilter3.jpeg) |
+
+| Staff Report | Staff Report |
+|--------------|----------------|
+| ![](Screenshots/team-e/StaffReportsFilter4.jpeg) | ![](Screenshots/team-e/StaffReportsFilter5.jpeg) |
+
+| Student Report | Student Report |
+|--------------|----------------|
+| ![](Screenshots/team-e/StudentExamReports-cont.png) | ![](Screenshots/team-e/StudentExamReports.png) |
+
+| Exam Report | Exam Report-1 |
 |-------------|------------------|
-| ![](Screenshots/team-e/05-exam-report.png) | ![](Screenshots/team-e/06-pass-fail.png) |
+| ![](Screenshots/team-e/ExamReports1.png) | ![](Screenshots/team-e/ExamReports2-cont.png) |
 
-| Filters | Export |
-|---------|--------|
-| ![](Screenshots/team-e/09-filters.png) | ![](Screenshots/team-e/10-export.png) |
+| Exam Report-2 | Exam Report-3 |
+|-------------|------------------|
+| ![](Screenshots/team-e/ExamReports2.png) |
+
+
 
 📁 Additional screenshots: `Screenshots/team-e/`
 
