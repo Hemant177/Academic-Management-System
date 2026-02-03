@@ -214,17 +214,17 @@ Each team independently developed their module and ensured seamless integration 
 |--------------|----------------|
 | ![](Screenshots/team-e/StaffReportsFilter4.jpeg) | ![](Screenshots/team-e/StaffReportsFilter5.jpeg) |
 
-| Student Report | Student Report |
+| Student Report | Student Exam Report |
 |--------------|----------------|
 | ![](Screenshots/team-e/StudentExamReports-cont.png) | ![](Screenshots/team-e/StudentExamReports.png) |
 
-| Exam Report | Exam Report-1 |
+| Student Report | Exam Report |
 |-------------|------------------|
-| ![](Screenshots/team-e/ExamReports1.png) | ![](Screenshots/team-e/ExamReports2-cont.png) |
+| ![](Screenshots/team-e/StudentReports.png) | ![](Screenshots/team-e/ExamReports1.png) |
 
 | Exam Report-2 | Exam Report-3 |
 |-------------|------------------|
-| ![](Screenshots/team-e/ExamReports2.png) |
+|  ![](Screenshots/team-e/ExamReports2-cont.png) |![](Screenshots/team-e/ExamReports2.png) |
 
 
 
